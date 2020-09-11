@@ -1,8 +1,6 @@
-[plugins]
-  package = "plugins/sass"
 [build]
-  publish = "public"
+publish = "public"
 [dev]
-  publish = "public"
-  
-  
+publish = "public"
+[[plugins]]
+package = "plugins/sass"
