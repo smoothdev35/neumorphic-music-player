@@ -3,4 +3,4 @@ publish = "public"
 [dev]
 publish = "public"
 [[plugins]]
-package = "plugins/sass"
+package = "sass"
