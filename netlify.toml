@@ -1,0 +1,8 @@
+[plugins]
+  package = "plugins/sass"
+[build]
+  publish = "public"
+[dev]
+  publish = "public"
+  
+  
