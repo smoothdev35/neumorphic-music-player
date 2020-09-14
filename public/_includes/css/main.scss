@@ -604,7 +604,7 @@ button {
           width: 95%;
           height: auto;
           margin: auto;
-          padding:10% 0;
+          padding: 10% 0;
           .entry-wrapper {
             display: flex;
             width: 100%;
@@ -692,7 +692,7 @@ button {
         height: 7.5%;
         position: absolute;
         left: 0.5%;
-        z-index:99;
+        z-index: 99;
         pointer-events: none;
       }
       &:before {
@@ -706,8 +706,8 @@ button {
       }
       &:after {
         bottom: 0;
-        border-bottom-left-radius: 2vmin;
-        border-bottom-right-radius: 2vmin;
+        border-bottom-left-radius: calc(var(--phone-width) / 11);
+        border-bottom-right-radius: calc(var(--phone-width) / 11);
         background: linear-gradient(to top, #1c1e22, #1c1e22 7.5%, transparent);
       }
     }
