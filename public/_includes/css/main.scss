@@ -291,8 +291,8 @@ button {
       grid-area: header;
       @include flexy;
       padding-top: 2vmin;
-      border-radius: calc(var(--phone-width) / 11);
-      border-radius: calc(var(--phone-width) / 11);
+      border-top-left-radius: calc(var(--phone-width) / 11);
+      border-top-right-radius: calc(var(--phone-width) / 11);
       h1 {
         width: calc(100% - 21vmin);
         color: var(--main-icon-text-color);
@@ -503,6 +503,7 @@ button {
         "catalog catalog catalog catalog catalog catalog catalog catalog"
         "catalog catalog catalog catalog catalog catalog catalog catalog"
         "catalog catalog catalog catalog catalog catalog catalog catalog";
+        overflow:hidden;
       .header {
         grid-area: header;
       }
@@ -609,7 +610,7 @@ button {
             display: flex;
             width: 100%;
             height: calc(var(--phone-width) / 5.98);
-            border-radius: calc(var(--phone-width) / 22.4);
+            border-radius: calc(var(--phone-width) / 18);
             &.pressed {
               background: linear-gradient(
                 180deg,
@@ -621,8 +622,8 @@ button {
               display: grid;
               grid-template-columns: repeat(6, 1fr);
               grid-template-rows: repeat(2, 1fr);
-              width: 99%;
-              height: 95%;
+              width: 98%;
+              height: 92%;
               margin: auto;
               justify-items: start;
               align-items: start;
@@ -630,7 +631,7 @@ button {
                 "title title title title . control"
                 "sub sub sub sub . control";
               gap: 0;
-              border-radius: calc(var(--phone-width) / 22.4);
+              border-radius: calc(var(--phone-width) / 22);
               cursor: pointer;
               &.pressed {
                 background: linear-gradient(
@@ -706,8 +707,6 @@ button {
       }
       &:after {
         bottom: 0;
-        border-bottom-left-radius: calc(var(--phone-width) / 11);
-        border-bottom-right-radius: calc(var(--phone-width) / 11);
         background: linear-gradient(to top, #1c1e22, #1c1e22 7.5%, transparent);
       }
     }
