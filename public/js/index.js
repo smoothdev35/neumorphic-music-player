@@ -1,3 +1,6 @@
+
+alert('nt');
+
 uiController = {
   songsArray: [],
   audioArray: [
