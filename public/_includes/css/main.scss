@@ -1,0 +1,715 @@
+@import "normalize";
+//variable-mixin for handling breakpoint quickly in scss
+$screen-lg-min: 950px;
+@mixin screen-lg {
+  @media screen and (min-width: $screen-lg-min) {
+    @content;
+  }
+}
+
+* {
+  scrollbar-width: none !important;
+  &::-webkit-scrollbar {
+    width: 0px !important;
+    background: transparent !important;
+  }
+}
+
+:root {
+  @include normalize();
+  font-family: sans-serif;
+  //simple responsive sizing
+  --base-unit-r: 1vmin;
+  --phone-width: calc(var(--base-unit-r) * 36);
+  --phone-height: calc(var(--base-unit-r) * 77);
+
+  //fluid typography
+  --fluid-font-one: calc(10px + (16 - 10) * ((100vw - 450px) / (1500 - 450)));
+  --fluid-font-two: calc(7px + (12 - 7) * ((100vw - 450px) / (1500 - 450)));
+  --fluid-font-three: calc(9px + (14 - 9) * ((100vw - 450px) / (1500 - 450)));
+  //color variables for whole design and neumorphic styling
+  --main-dark: #25272a;
+  --neu-dark: #090a0c;
+  --neu-light: #252a30;
+  --back-gradient: linear-gradient(
+    180deg,
+    rgba(62, 67, 76, 1) 0%,
+    rgba(30, 32, 36, 1) 100%
+  );
+  --front-gradient: linear-gradient(
+    180deg,
+    rgba(49, 56, 61, 1) 0%,
+    rgba(24, 25, 29, 1) 100%
+  );
+  --header-button-wrapper-gradient: linear-gradient(
+    135deg,
+    rgba(43, 47, 52, 1) 0%,
+    rgba(49, 56, 61, 1) 100%
+  );
+  --header-button-wrapper-neu-shadows: 0.2vw 0.2vw 0.7vw #16191b,
+    -0.2vw -0.2vw 0.7vw #4c575f;
+  --header-normal-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(46, 52, 57, 1) 0%,
+    rgba(27, 30, 34, 1) 100%
+  );
+  --header-pressed-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(222, 57, 19, 1) 0%,
+    rgba(234, 81, 14, 1) 100%
+  );
+  --header-pressed-button-inset-shadows: inset 0.75vw 0.75vw 0.75vw
+    rgba(0, 0, 0, 0.3);
+  --main-cover-wrapper-gradient: linear-gradient(
+    135deg,
+    rgba(31, 36, 40, 1) 0%,
+    rgba(22, 23, 25, 1) 100%
+  );
+  --main-cover-neu-shadows: 0.5vw 0.5vw 0.5vw #1a1e20,
+    -0.5vw -0.5vw 0.75vw #363e44;
+  --slider-track-gradient: linear-gradient(
+    90deg,
+    rgba(217, 61, 7, 1) 0%,
+    rgba(147, 113, 20, 1) 100%
+  );
+  --controls-normal-button-wrapper-gradient: linear-gradient(
+    135deg,
+    rgba(32, 37, 41, 1) 0%,
+    rgba(22, 24, 25, 1) 100%
+  );
+  --controls-button-wrapper-neu-shadows: 0.2vw 0.2vw 0.5vw #16191b,
+    -0.2vw -0.2vw 0.5vw #363e44;
+  --controls-normal-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(40, 43, 48, 1) 0%,
+    rgba(29, 32, 35, 1) 100%
+  );
+  --controls-normal-button-inset-shadows: inset 0 0 0.3vw
+    rgba(255, 255, 255, 0.1);
+  --controls-pressed-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(183, 29, 16, 1) 0%,
+    rgba(236, 86, 12, 1) 100%
+  );
+  --main-icon-text-color: rgba(255, 255, 255, 0.5);
+}
+
+//multi-purpose handy mixins
+
+@mixin flexy {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+@mixin adjust($number, $numtwo) {
+  background-size: $number, auto;
+  background-repeat: no-repeat;
+  background-position: $numtwo 52%, center;
+}
+//set and adjust double backgrounds (icon + gradient)
+@mixin dualGraphicControls($prop1, $prop2, $prop3, $prop4) {
+  background: $prop1, $prop2;
+  @include adjust($prop3, $prop4);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--main-dark);
+  //get the screens closer to each other on large screens
+  @include screen-lg {
+    justify-content: space-around;
+  }
+}
+
+div {
+  border-radius: 50%;
+}
+button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+%small-button {
+  display: flex;
+  width: calc(var(--phone-width) / 7);
+  height: calc(var(--phone-width) / 7);
+  background: var(--header-button-wrapper-gradient);
+  box-shadow: var(--header-button-wrapper-neu-shadows);
+  &.pressed {
+    --header-button-wrapper-gradient: linear-gradient(
+      135deg,
+      rgba(218, 77, 12, 1) 0%,
+      rgba(180, 54, 19, 1) 100%
+    );
+  }
+  button {
+    margin: auto;
+    transform: scale(0.9);
+    &:active {
+      box-shadow: var(--header-pressed-button-inset-shadows);
+      transition: all 0.1s ease;
+    }
+  }
+}
+%big-button {
+  width: calc(var(--phone-width) / 4.7);
+  height: calc(var(--phone-width) / 4.7);
+  transform: translateY(-15%);
+  background: var(--controls-normal-button-wrapper-gradient);
+  box-shadow: var(--controls-button-wrapper-neu-shadows);
+  &.pressed {
+    --controls-normal-button-wrapper-gradient: linear-gradient(
+      135deg,
+      rgba(214, 78, 12, 1) 0%,
+      rgba(166, 47, 19, 1) 100%
+    );
+  }
+  button {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.925);
+    background: var(--controls-normal-button-front-gradient);
+    box-shadow: var(--controls-normal-button-inset-shadows);
+    transition: all 0.1s linear;
+    &:active,
+    &.pressed {
+      --controls-normal-button-inset-shadows: inset 0.75vw 0.75vw 0.75vw
+        rgba(0, 0, 0, 0.2);
+    }
+  }
+
+  &:nth-of-type(1) {
+    button {
+      @include dualGraphicControls(
+        url("rewind-smooth-grey.svg"),
+        var(--controls-normal-button-front-gradient),
+        20%,
+        45%
+      );
+      &:active {
+        @include dualGraphicControls(
+          url("rewind-smooth-white.svg"),
+          var(--controls-pressed-button-front-gradient),
+          20%,
+          45%
+        );
+      }
+    }
+  }
+
+  &:nth-of-type(2) {
+    width: calc(var(--phone-width) / 4);
+    height: calc(var(--phone-width) / 4);
+    button {
+      @include dualGraphicControls(
+        url("play-smooth-grey.svg"),
+        var(--controls-normal-button-front-gradient),
+        20%,
+        50%
+      );
+
+      &:active,
+      &.pressed {
+        @include dualGraphicControls(
+          url("pause-smooth-white.svg"),
+          var(--controls-pressed-button-front-gradient),
+          20%,
+          50%
+        );
+      }
+    }
+  }
+  &:nth-of-type(3) {
+    button {
+      @include dualGraphicControls(
+        url("forward-smooth-grey.svg"),
+        var(--controls-normal-button-front-gradient),
+        20%,
+        50%
+      );
+
+      &:active {
+        @include dualGraphicControls(
+          url("forward-smooth-white.svg"),
+          var(--controls-pressed-button-front-gradient),
+          20%,
+          50%
+        );
+      }
+    }
+  }
+}
+
+%neu-pic {
+  @include flexy;
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--main-cover-wrapper-gradient);
+  box-shadow: var(--main-cover-neu-shadows);
+  div {
+    border-radius: 50%;
+    background: url("evol-cover.jpg");
+    background-size: cover;
+  }
+}
+.phone {
+  width: var(--phone-width);
+  height: var(--phone-height);
+  position: relative;
+  top: -2.5%;
+  background: var(--back-gradient);
+  border-radius: calc(var(--phone-width) / 10);
+  box-shadow: 2vmin 2vmin 8vmin black;
+  &:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.965, 0.985);
+    border-radius: calc(var(--phone-width) / 11);
+    background: var(--front-gradient);
+  }
+  .content {
+    display: grid;
+    width: 96.5%;
+    height: 98.5%;
+    position: relative;
+    top: 0.75%;
+    left: 1.75%;
+    border-radius: calc(var(--phone-width) / 11);
+    text-align: center;
+    .header {
+      grid-area: header;
+      @include flexy;
+      padding-top: 2vmin;
+      border-radius: calc(var(--phone-width) / 11);
+      border-radius: calc(var(--phone-width) / 11);
+      h1 {
+        width: calc(100% - 21vmin);
+        color: var(--main-icon-text-color);
+        font-size: var(--fluid-font-two);
+      }
+    }
+  }
+  &:nth-of-type(1) {
+    transform: translate(30%, -2.5%);
+    .content {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(18, 1fr);
+      grid-template-areas:
+        "header header header header header header header header"
+        "header header header header header header header header"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        "main main main main main main main main"
+        ". title title title title title title ."
+        ". title title title title title title ."
+        " slider slider slider slider slider slider slider slider"
+        " slider slider slider slider slider slider slider slider"
+        "controls controls controls controls controls controls controls controls"
+        "controls controls controls controls controls controls controls controls"
+        "controls controls controls controls controls controls controls controls"
+        "controls controls controls controls controls controls controls controls";
+
+      .header {
+        div {
+          @extend %small-button;
+          &:nth-of-type(1) {
+            button {
+              @include dualGraphicControls(
+                url("arrow-left-grey.svg"),
+                var(--header-normal-button-front-gradient),
+                30%,
+                50%
+              );
+
+              &:active {
+                @include dualGraphicControls(
+                  url("arrow-left-white.svg"),
+                  var(--header-pressed-button-front-gradient),
+                  30%,
+                  50%
+                );
+              }
+            }
+          }
+          &:nth-of-type(2) {
+            button {
+              @include dualGraphicControls(
+                url("menu-grey.svg"),
+                var(--header-normal-button-front-gradient),
+                30%,
+                50%
+              );
+              &:active {
+                @include dualGraphicControls(
+                  url("menu-white.svg"),
+                  var(--header-pressed-button-front-gradient),
+                  30%,
+                  50%
+                );
+              }
+            }
+          }
+        }
+      }
+      .main {
+        grid-area: main;
+        display: flex;
+        article {
+          @extend %neu-pic;
+          width: calc(var(--phone-width) / 1.27);
+          height: calc(var(--phone-width) / 1.27);
+          top: -1%;
+          div {
+            width: 92.5%;
+            height: 92.5%;
+          }
+        }
+      }
+      .title {
+        grid-area: title;
+        position: relative;
+        h1 {
+          width: 100%;
+          position: relative;
+          color: rgba(255, 255, 255, 0.75);
+          font-size: var(--fluid-font-one);
+        }
+        h3 {
+          width: 100%;
+          position: absolute;
+          top: 30%;
+          left: 0;
+          color: var(--main-icon-text-color);
+          font-size: var(--fluid-font-three);
+        }
+      }
+      .slider {
+        grid-area: slider;
+        @include flexy;
+        position: relative;
+        input[type="range"] {
+          appearance: none;
+          width: 90%;
+          height: 8%;
+          border-radius: 1vw;
+          background: black;
+          box-shadow: inset 0 -0.1vmin 0.1vmin var(--main-icon-text-color);
+
+          &:focus {
+            outline: 0;
+          }
+          &::-webkit-slider-thumb {
+            appearance: none;
+            width: calc(var(--phone-width) / 12.5);
+            height: calc(var(--phone-width) / 12.5);
+            position: relative;
+            border-radius: 50%;
+            background: radial-gradient(
+              circle,
+              orange 0,
+              orange 30%,
+              #24292d 30%,
+              #24292d 50%,
+              #212529 50%,
+              #212529
+            );
+            background-clip: border-box;
+            box-shadow: inset 0 0.2vmin 0.2vmin rgba(255, 255, 255, 0.15),
+              inset 0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.08),
+              inset -0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.01),
+              inset 0 -0.2vmin 0.2vmin rgba(0, 0, 0, 0.5),
+              0.8vmin 0.8vmin 0.8vmin rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+          }
+          &::-moz-range-thumb {
+            width: calc(var(--phone-width) / 12.5);
+            height: calc(var(--phone-width) / 12.5);
+            position: relative;
+            border: none;
+            border-radius: 50%;
+            background: radial-gradient(
+              circle,
+              orange 0,
+              orange 30%,
+              #24292d 30%,
+              #24292d 50%,
+              #212529 50%,
+              #212529
+            );
+            background-clip: border-box;
+            box-shadow: inset 0 0.2vmin 0.2vmin rgba(255, 255, 255, 0.15),
+              inset 0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.08),
+              inset -0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.01),
+              inset 0 -0.2vmin 0.2vmin rgba(0, 0, 0, 0.5),
+              0.8vmin 0.8vmin 0.8vmin rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+          }
+        }
+        label {
+          width: 15%;
+          height: 20%;
+          position: absolute;
+          top: 2.5%;
+          color: var(--main-icon-text-color);
+          font-size: var(--fluid-font-two);
+        }
+        #passed {
+          left: 3%;
+        }
+        #left {
+          right: 3%;
+        }
+      }
+      .controls {
+        grid-area: controls;
+        @include flexy;
+        div {
+          @extend %big-button;
+        }
+      }
+    }
+  }
+  &:nth-of-type(2) {
+    transform: translate(-30%, 2.5%);
+    .content {
+      position: relative;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr 1fr 1fr 1fr repeat(6, 1fr);
+      grid-template-areas:
+        "header header header header header header header header"
+        "visual visual visual visual visual visual visual visual"
+        "visual visual visual visual visual visual visual visual"
+        "visual visual visual visual visual visual visual visual"
+        "catalog catalog catalog catalog catalog catalog catalog catalog"
+        "catalog catalog catalog catalog catalog catalog catalog catalog"
+        "catalog catalog catalog catalog catalog catalog catalog catalog"
+        "catalog catalog catalog catalog catalog catalog catalog catalog"
+        "catalog catalog catalog catalog catalog catalog catalog catalog"
+        "catalog catalog catalog catalog catalog catalog catalog catalog"
+        "catalog catalog catalog catalog catalog catalog catalog catalog";
+      .header {
+        grid-area: header;
+      }
+      .visual {
+        grid-area: visual;
+        width: 87.5%;
+        margin: auto;
+        @include flexy;
+
+        div {
+          @extend %small-button;
+          &:nth-of-type(1) {
+            transform: translate(12%, -5%);
+            button {
+              @include dualGraphicControls(
+                url("heart-grey.svg"),
+                var(--header-normal-button-front-gradient),
+                30%,
+                48%
+              );
+              &:active {
+                @include dualGraphicControls(
+                  url("heart-white.svg"),
+                  var(--header-pressed-button-front-gradient),
+                  30%,
+                  48%
+                );
+              }
+              &.pressed {
+                @include dualGraphicControls(
+                  url("heart-white.svg"),
+                  var(--header-pressed-button-front-gradient),
+                  30%,
+                  48%
+                );
+              }
+              &.heart-pressed {
+                @include dualGraphicControls(
+                  url("heart-red.svg"),
+                  var(--header-normal-button-front-gradient),
+                  30%,
+                  48%
+                );
+              }
+              &.heart-back {
+                @include dualGraphicControls(
+                  url("heart-white.svg"),
+                  var(--header-pressed-button-front-gradient),
+                  30%,
+                  48%
+                );
+              }
+            }
+          }
+          &:nth-of-type(2) {
+            transform: translate(-12%, -5%);
+            button {
+              @include dualGraphicControls(
+                url("more-grey.svg"),
+                var(--header-normal-button-front-gradient),
+                30%,
+                48%
+              );
+              background-position: 48% 50%, center;
+
+              &:active {
+                @include dualGraphicControls(
+                  url("more-white.svg"),
+                  var(--header-pressed-button-front-gradient),
+                  30%,
+                  48%
+                );
+                background-position: 48% 50%, center;
+              }
+            }
+          }
+        }
+        article {
+          @extend %neu-pic;
+          width: calc(var(--phone-width) / 2.8);
+          height: calc(var(--phone-width) / 2.8);
+          transform: translateY(-5%);
+          div {
+            width: 90%;
+            height: 90%;
+            transform: none !important;
+            box-shadow: none;
+          }
+        }
+      }
+      .catalog {
+        grid-area: catalog;
+        display: flex;
+        position: relative;
+        overflow-y: scroll;
+        .catalog-content {
+          display: flex;
+          flex-wrap: wrap;
+          width: 95%;
+          height: auto;
+          margin: auto;
+          padding:10% 0;
+          .entry-wrapper {
+            display: flex;
+            width: 100%;
+            height: calc(var(--phone-width) / 5.98);
+            border-radius: calc(var(--phone-width) / 22.4);
+            &.pressed {
+              background: linear-gradient(
+                180deg,
+                rgba(51, 57, 63, 1) 0%,
+                rgba(18, 20, 23, 1) 100%
+              );
+            }
+            .entry {
+              display: grid;
+              grid-template-columns: repeat(6, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+              width: 99%;
+              height: 95%;
+              margin: auto;
+              justify-items: start;
+              align-items: start;
+              grid-template-areas:
+                "title title title title . control"
+                "sub sub sub sub . control";
+              gap: 0;
+              border-radius: calc(var(--phone-width) / 22.4);
+              cursor: pointer;
+              &.pressed {
+                background: linear-gradient(
+                  135deg,
+                  rgba(19, 21, 23, 1) 0%,
+                  rgba(27, 29, 32, 1) 100%
+                );
+              }
+              h1 {
+                grid-area: title;
+                margin-top: 6.5%;
+                margin-left: 10%;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: var(--fluid-font-two);
+                pointer-events: none;
+              }
+              h3 {
+                grid-area: sub;
+                margin-top: -4%;
+                margin-left: 10%;
+                color: var(--main-icon-text-color);
+                font-size: var(--fluid-font-two);
+                text-align: left;
+                pointer-events: none;
+              }
+              div {
+                @extend %small-button;
+                grid-area: control;
+                width: calc(var(--phone-width) / 10.2);
+                height: calc(var(--phone-width) / 10.2);
+                transform: translate(20%, 37.5%);
+                button {
+                  @include dualGraphicControls(
+                    url("play-smooth-grey.svg"),
+                    var(--header-normal-button-front-gradient),
+                    30%,
+                    50%
+                  );
+                  background-position: center, center;
+                  &.pressed {
+                    @include dualGraphicControls(
+                      url("pause-smooth-white.svg"),
+                      var(--header-pressed-button-front-gradient),
+                      30%,
+                      50%
+                    );
+                    background-position: center, center;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      &:before,
+      &:after {
+        content: "";
+        width: 99%;
+        height: 7.5%;
+        position: absolute;
+        left: 0.5%;
+        z-index:99;
+        pointer-events: none;
+      }
+      &:before {
+        top: 40%;
+        background: linear-gradient(
+          to bottom,
+          rgb(39, 44, 48),
+          rgb(39, 44, 48) 7.5%,
+          transparent
+        );
+      }
+      &:after {
+        bottom: 0;
+        border-bottom-left-radius: 2vmin;
+        border-bottom-right-radius: 2vmin;
+        background: linear-gradient(to top, #1c1e22, #1c1e22 7.5%, transparent);
+      }
+    }
+  }
+}

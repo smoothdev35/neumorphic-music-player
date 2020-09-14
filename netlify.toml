@@ -3,4 +3,6 @@ publish = "public"
 [dev]
 publish = "public"
 [[plugins]]
-package = "sass"
+package="/plugins/autoprefixer"
+[[plugins]]
+package="/plugins/sass"

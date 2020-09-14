@@ -1,0 +1,837 @@
+* {
+  scrollbar-width: none !important; }
+  *::-webkit-scrollbar {
+    width: 0px !important;
+    background: transparent !important; }
+
+:root {
+  /*! normalize-scss | MIT/GPLv2 License | bit.ly/normalize-scss */
+  /* Document
+       ========================================================================== */
+  /**
+     * 1. Correct the line height in all browsers.
+     * 2. Prevent adjustments of font size after orientation changes in
+     *    IE on Windows Phone and in iOS.
+     */
+  /* Sections
+       ========================================================================== */
+  /**
+     * Remove the margin in all browsers (opinionated).
+     */
+  /**
+     * Add the correct display in IE 9-.
+     */
+  /**
+     * Correct the font size and margin on `h1` elements within `section` and
+     * `article` contexts in Chrome, Firefox, and Safari.
+     */
+  /* Grouping content
+       ========================================================================== */
+  /**
+     * Add the correct display in IE 9-.
+     */
+  /**
+     * Add the correct margin in IE 8.
+     */
+  /**
+     * 1. Add the correct box sizing in Firefox.
+     * 2. Show the overflow in Edge and IE.
+     */
+  /**
+     * Add the correct display in IE.
+     */
+  /**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+  /* Links
+       ========================================================================== */
+  /**
+     * 1. Remove the gray background on active links in IE 10.
+     * 2. Remove gaps in links underline in iOS 8+ and Safari 8+.
+     */
+  /* Text-level semantics
+       ========================================================================== */
+  /**
+     * 1. Remove the bottom border in Chrome 57- and Firefox 39-.
+     * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+     */
+  /**
+     * Prevent the duplicate application of `bolder` by the next rule in Safari 6.
+     */
+  /**
+     * Add the correct font weight in Chrome, Edge, and Safari.
+     */
+  /**
+     * 1. Correct the inheritance and scaling of font size in all browsers.
+     * 2. Correct the odd `em` font sizing in all browsers.
+     */
+  /**
+     * Add the correct font style in Android 4.3-.
+     */
+  /**
+     * Add the correct background and color in IE 9-.
+     */
+  /**
+     * Add the correct font size in all browsers.
+     */
+  /**
+     * Prevent `sub` and `sup` elements from affecting the line height in
+     * all browsers.
+     */
+  /* Embedded content
+       ========================================================================== */
+  /**
+     * Add the correct display in IE 9-.
+     */
+  /**
+     * Add the correct display in iOS 4-7.
+     */
+  /**
+     * Remove the border on images inside links in IE 10-.
+     */
+  /**
+     * Hide the overflow in IE.
+     */
+  /* Forms
+       ========================================================================== */
+  /**
+     * 1. Change the font styles in all browsers (opinionated).
+     * 2. Remove the margin in Firefox and Safari.
+     */
+  /**
+     * Show the overflow in IE.
+     */
+  /**
+     * Remove the inheritance of text transform in Edge, Firefox, and IE.
+     * 1. Remove the inheritance of text transform in Firefox.
+     */
+  /**
+     * 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+     *    controls in Android 4.
+     * 2. Correct the inability to style clickable types in iOS and Safari.
+     */
+  /**
+     * Show the overflow in Edge.
+     */
+  /**
+     * 1. Add the correct box sizing in IE 10-.
+     * 2. Remove the padding in IE 10-.
+     */
+  /**
+     * Correct the cursor style of increment and decrement buttons in Chrome.
+     */
+  /**
+     * 1. Correct the odd appearance in Chrome and Safari.
+     * 2. Correct the outline style in Safari.
+     */
+  /**
+     * 1. Correct the inability to style clickable types in iOS and Safari.
+     * 2. Change font properties to `inherit` in Safari.
+     */
+  /**
+     * Correct the padding in Firefox.
+     */
+  /**
+     * 1. Correct the text wrapping in Edge and IE.
+     * 2. Correct the color inheritance from `fieldset` elements in IE.
+     * 3. Remove the padding so developers are not caught out when they zero out
+     *    `fieldset` elements in all browsers.
+     */
+  /**
+     * 1. Add the correct display in IE 9-.
+     * 2. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+     */
+  /**
+     * Remove the default vertical scrollbar in IE.
+     */
+  /* Interactive
+       ========================================================================== */
+  /*
+     * Add the correct display in Edge, IE, and Firefox.
+     */
+  /*
+     * Add the correct display in all browsers.
+     */
+  /*
+     * Add the correct display in IE 9-.
+     */
+  /* Scripting
+       ========================================================================== */
+  /**
+     * Add the correct display in IE 9-.
+     */
+  /**
+     * Add the correct display in IE.
+     */
+  /* Hidden
+       ========================================================================== */
+  /**
+     * Add the correct display in IE 10-.
+     */
+  font-family: sans-serif;
+  --base-unit-r: 1vmin;
+  --phone-width: calc(var(--base-unit-r) * 36);
+  --phone-height: calc(var(--base-unit-r) * 77);
+  --fluid-font-one: calc(10px + (16 - 10) * ((100vw - 450px) / (1500 - 450)));
+  --fluid-font-two: calc(7px + (12 - 7) * ((100vw - 450px) / (1500 - 450)));
+  --fluid-font-three: calc(9px + (14 - 9) * ((100vw - 450px) / (1500 - 450)));
+  --main-dark: #25272a;
+  --neu-dark: #090a0c;
+  --neu-light: #252a30;
+  --back-gradient: linear-gradient(
+    180deg,
+    rgba(62, 67, 76, 1) 0%,
+    rgba(30, 32, 36, 1) 100%
+  );
+  --front-gradient: linear-gradient(
+    180deg,
+    rgba(49, 56, 61, 1) 0%,
+    rgba(24, 25, 29, 1) 100%
+  );
+  --header-button-wrapper-gradient: linear-gradient(
+    135deg,
+    rgba(43, 47, 52, 1) 0%,
+    rgba(49, 56, 61, 1) 100%
+  );
+  --header-button-wrapper-neu-shadows: 0.2vw 0.2vw 0.7vw #16191b,
+    -0.2vw -0.2vw 0.7vw #4c575f;
+  --header-normal-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(46, 52, 57, 1) 0%,
+    rgba(27, 30, 34, 1) 100%
+  );
+  --header-pressed-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(222, 57, 19, 1) 0%,
+    rgba(234, 81, 14, 1) 100%
+  );
+  --header-pressed-button-inset-shadows: inset 0.75vw 0.75vw 0.75vw
+    rgba(0, 0, 0, 0.3);
+  --main-cover-wrapper-gradient: linear-gradient(
+    135deg,
+    rgba(31, 36, 40, 1) 0%,
+    rgba(22, 23, 25, 1) 100%
+  );
+  --main-cover-neu-shadows: 0.5vw 0.5vw 0.5vw #1a1e20,
+    -0.5vw -0.5vw 0.75vw #363e44;
+  --slider-track-gradient: linear-gradient(
+    90deg,
+    rgba(217, 61, 7, 1) 0%,
+    rgba(147, 113, 20, 1) 100%
+  );
+  --controls-normal-button-wrapper-gradient: linear-gradient(
+    135deg,
+    rgba(32, 37, 41, 1) 0%,
+    rgba(22, 24, 25, 1) 100%
+  );
+  --controls-button-wrapper-neu-shadows: 0.2vw 0.2vw 0.5vw #16191b,
+    -0.2vw -0.2vw 0.5vw #363e44;
+  --controls-normal-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(40, 43, 48, 1) 0%,
+    rgba(29, 32, 35, 1) 100%
+  );
+  --controls-normal-button-inset-shadows: inset 0 0 0.3vw
+    rgba(255, 255, 255, 0.1);
+  --controls-pressed-button-front-gradient: linear-gradient(
+    135deg,
+    rgba(183, 29, 16, 1) 0%,
+    rgba(236, 86, 12, 1) 100%
+  );
+  --main-icon-text-color: rgba(255, 255, 255, 0.5); }
+  :root html {
+    line-height: 1.15;
+    /* 1 */
+    -ms-text-size-adjust: 100%;
+    /* 2 */
+    -webkit-text-size-adjust: 100%;
+    /* 2 */ }
+  :root body {
+    margin: 0; }
+  :root article,
+  :root aside,
+  :root footer,
+  :root header,
+  :root nav,
+  :root section {
+    display: block; }
+  :root h1 {
+    font-size: 2em;
+    margin: 0.67em 0; }
+  :root figcaption,
+  :root figure {
+    display: block; }
+  :root figure {
+    margin: 1em 40px; }
+  :root hr {
+    box-sizing: content-box;
+    /* 1 */
+    height: 0;
+    /* 1 */
+    overflow: visible;
+    /* 2 */ }
+  :root main {
+    display: block; }
+  :root pre {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */ }
+  :root a {
+    background-color: transparent;
+    /* 1 */
+    -webkit-text-decoration-skip: objects;
+    /* 2 */ }
+  :root abbr[title] {
+    border-bottom: none;
+    /* 1 */
+    text-decoration: underline;
+    /* 2 */
+    text-decoration: underline dotted;
+    /* 2 */ }
+  :root b,
+  :root strong {
+    font-weight: inherit; }
+  :root b,
+  :root strong {
+    font-weight: bolder; }
+  :root code,
+  :root kbd,
+  :root samp {
+    font-family: monospace, monospace;
+    /* 1 */
+    font-size: 1em;
+    /* 2 */ }
+  :root dfn {
+    font-style: italic; }
+  :root mark {
+    background-color: #ff0;
+    color: #000; }
+  :root small {
+    font-size: 80%; }
+  :root sub,
+  :root sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline; }
+  :root sub {
+    bottom: -0.25em; }
+  :root sup {
+    top: -0.5em; }
+  :root audio,
+  :root video {
+    display: inline-block; }
+  :root audio:not([controls]) {
+    display: none;
+    height: 0; }
+  :root img {
+    border-style: none; }
+  :root svg:not(:root) {
+    overflow: hidden; }
+  :root button,
+  :root input,
+  :root optgroup,
+  :root select,
+  :root textarea {
+    font-family: sans-serif;
+    /* 1 */
+    font-size: 100%;
+    /* 1 */
+    line-height: 1.15;
+    /* 1 */
+    margin: 0;
+    /* 2 */ }
+  :root button {
+    overflow: visible; }
+  :root button,
+  :root select {
+    /* 1 */
+    text-transform: none; }
+  :root button,
+  :root html [type="button"],
+  :root [type="reset"],
+  :root [type="submit"] {
+    -webkit-appearance: button;
+    /* 2 */ }
+  :root button,
+  :root [type="button"],
+  :root [type="reset"],
+  :root [type="submit"] {
+    /**
+       * Remove the inner border and padding in Firefox.
+       */
+    /**
+       * Restore the focus styles unset by the previous rule.
+       */ }
+    :root button::-moz-focus-inner,
+    :root [type="button"]::-moz-focus-inner,
+    :root [type="reset"]::-moz-focus-inner,
+    :root [type="submit"]::-moz-focus-inner {
+      border-style: none;
+      padding: 0; }
+    :root button:-moz-focusring,
+    :root [type="button"]:-moz-focusring,
+    :root [type="reset"]:-moz-focusring,
+    :root [type="submit"]:-moz-focusring {
+      outline: 1px dotted ButtonText; }
+  :root input {
+    overflow: visible; }
+  :root [type="checkbox"],
+  :root [type="radio"] {
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */ }
+  :root [type="number"]::-webkit-inner-spin-button,
+  :root [type="number"]::-webkit-outer-spin-button {
+    height: auto; }
+  :root [type="search"] {
+    -webkit-appearance: textfield;
+    /* 1 */
+    outline-offset: -2px;
+    /* 2 */
+    /**
+       * Remove the inner padding and cancel buttons in Chrome and Safari on macOS.
+       */ }
+    :root [type="search"]::-webkit-search-cancel-button, :root [type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none; }
+  :root ::-webkit-file-upload-button {
+    -webkit-appearance: button;
+    /* 1 */
+    font: inherit;
+    /* 2 */ }
+  :root fieldset {
+    padding: 0.35em 0.75em 0.625em; }
+  :root legend {
+    box-sizing: border-box;
+    /* 1 */
+    display: table;
+    /* 1 */
+    max-width: 100%;
+    /* 1 */
+    padding: 0;
+    /* 3 */
+    color: inherit;
+    /* 2 */
+    white-space: normal;
+    /* 1 */ }
+  :root progress {
+    display: inline-block;
+    /* 1 */
+    vertical-align: baseline;
+    /* 2 */ }
+  :root textarea {
+    overflow: auto; }
+  :root details {
+    display: block; }
+  :root summary {
+    display: list-item; }
+  :root menu {
+    display: block; }
+  :root canvas {
+    display: inline-block; }
+  :root template {
+    display: none; }
+  :root [hidden] {
+    display: none; }
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--main-dark); }
+  @media screen and (min-width: 950px) {
+    body {
+      justify-content: space-around; } }
+
+div {
+  border-radius: 50%; }
+
+button {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer; }
+
+.phone:nth-of-type(1) .content .header div, .phone:nth-of-type(2) .content .visual div, .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div {
+  display: flex;
+  width: calc(var(--phone-width) / 7);
+  height: calc(var(--phone-width) / 7);
+  background: var(--header-button-wrapper-gradient);
+  box-shadow: var(--header-button-wrapper-neu-shadows); }
+  .phone:nth-of-type(1) .content .header div.pressed, .phone:nth-of-type(2) .content .visual div.pressed, .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div.pressed {
+    --header-button-wrapper-gradient: linear-gradient(
+      135deg,
+      rgba(218, 77, 12, 1) 0%,
+      rgba(180, 54, 19, 1) 100%
+    ); }
+  .phone:nth-of-type(1) .content .header div button, .phone:nth-of-type(2) .content .visual div button, .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div button {
+    margin: auto;
+    transform: scale(0.9); }
+    .phone:nth-of-type(1) .content .header div button:active, .phone:nth-of-type(2) .content .visual div button:active, .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div button:active {
+      box-shadow: var(--header-pressed-button-inset-shadows);
+      transition: all 0.1s ease; }
+
+.phone:nth-of-type(1) .content .controls div {
+  width: calc(var(--phone-width) / 4.7);
+  height: calc(var(--phone-width) / 4.7);
+  transform: translateY(-15%);
+  background: var(--controls-normal-button-wrapper-gradient);
+  box-shadow: var(--controls-button-wrapper-neu-shadows); }
+  .phone:nth-of-type(1) .content .controls div.pressed {
+    --controls-normal-button-wrapper-gradient: linear-gradient(
+      135deg,
+      rgba(214, 78, 12, 1) 0%,
+      rgba(166, 47, 19, 1) 100%
+    ); }
+  .phone:nth-of-type(1) .content .controls div button {
+    width: 100%;
+    height: 100%;
+    transform: scale(0.925);
+    background: var(--controls-normal-button-front-gradient);
+    box-shadow: var(--controls-normal-button-inset-shadows);
+    transition: all 0.1s linear; }
+    .phone:nth-of-type(1) .content .controls div button:active, .phone:nth-of-type(1) .content .controls div button.pressed {
+      --controls-normal-button-inset-shadows: inset 0.75vw 0.75vw 0.75vw
+        rgba(0, 0, 0, 0.2); }
+  .phone:nth-of-type(1) .content .controls div:nth-of-type(1) button {
+    background: url("rewind-smooth-grey.svg"), var(--controls-normal-button-front-gradient);
+    background-size: 20%, auto;
+    background-repeat: no-repeat;
+    background-position: 45% 52%, center; }
+    .phone:nth-of-type(1) .content .controls div:nth-of-type(1) button:active {
+      background: url("rewind-smooth-white.svg"), var(--controls-pressed-button-front-gradient);
+      background-size: 20%, auto;
+      background-repeat: no-repeat;
+      background-position: 45% 52%, center; }
+  .phone:nth-of-type(1) .content .controls div:nth-of-type(2) {
+    width: calc(var(--phone-width) / 4);
+    height: calc(var(--phone-width) / 4); }
+    .phone:nth-of-type(1) .content .controls div:nth-of-type(2) button {
+      background: url("play-smooth-grey.svg"), var(--controls-normal-button-front-gradient);
+      background-size: 20%, auto;
+      background-repeat: no-repeat;
+      background-position: 50% 52%, center; }
+      .phone:nth-of-type(1) .content .controls div:nth-of-type(2) button:active, .phone:nth-of-type(1) .content .controls div:nth-of-type(2) button.pressed {
+        background: url("pause-smooth-white.svg"), var(--controls-pressed-button-front-gradient);
+        background-size: 20%, auto;
+        background-repeat: no-repeat;
+        background-position: 50% 52%, center; }
+  .phone:nth-of-type(1) .content .controls div:nth-of-type(3) button {
+    background: url("forward-smooth-grey.svg"), var(--controls-normal-button-front-gradient);
+    background-size: 20%, auto;
+    background-repeat: no-repeat;
+    background-position: 50% 52%, center; }
+    .phone:nth-of-type(1) .content .controls div:nth-of-type(3) button:active {
+      background: url("forward-smooth-white.svg"), var(--controls-pressed-button-front-gradient);
+      background-size: 20%, auto;
+      background-repeat: no-repeat;
+      background-position: 50% 52%, center; }
+
+.phone:nth-of-type(1) .content .main article, .phone:nth-of-type(2) .content .visual article {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  border-radius: 50%;
+  background: var(--main-cover-wrapper-gradient);
+  box-shadow: var(--main-cover-neu-shadows); }
+  .phone:nth-of-type(1) .content .main article div, .phone:nth-of-type(2) .content .visual article div {
+    border-radius: 50%;
+    background: url("evol-cover.jpg");
+    background-size: cover; }
+
+.phone {
+  width: var(--phone-width);
+  height: var(--phone-height);
+  position: relative;
+  top: -2.5%;
+  background: var(--back-gradient);
+  border-radius: calc(var(--phone-width) / 10);
+  box-shadow: 2vmin 2vmin 8vmin black; }
+  .phone:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: scale(0.965, 0.985);
+    border-radius: calc(var(--phone-width) / 11);
+    background: var(--front-gradient); }
+  .phone .content {
+    display: grid;
+    width: 96.5%;
+    height: 98.5%;
+    position: relative;
+    top: 0.75%;
+    left: 1.75%;
+    border-radius: calc(var(--phone-width) / 11);
+    text-align: center; }
+    .phone .content .header {
+      grid-area: header;
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      padding-top: 2vmin;
+      border-radius: calc(var(--phone-width) / 11);
+      border-radius: calc(var(--phone-width) / 11); }
+      .phone .content .header h1 {
+        width: calc(100% - 21vmin);
+        color: var(--main-icon-text-color);
+        font-size: var(--fluid-font-two); }
+  .phone:nth-of-type(1) {
+    transform: translate(30%, -2.5%); }
+    .phone:nth-of-type(1) .content {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: repeat(18, 1fr);
+      grid-template-areas: "header header header header header header header header" "header header header header header header header header" "main main main main main main main main" "main main main main main main main main" "main main main main main main main main" "main main main main main main main main" "main main main main main main main main" "main main main main main main main main" "main main main main main main main main" "main main main main main main main main" ". title title title title title title ." ". title title title title title title ." " slider slider slider slider slider slider slider slider" " slider slider slider slider slider slider slider slider" "controls controls controls controls controls controls controls controls" "controls controls controls controls controls controls controls controls" "controls controls controls controls controls controls controls controls" "controls controls controls controls controls controls controls controls"; }
+      .phone:nth-of-type(1) .content .header div:nth-of-type(1) button {
+        background: url("arrow-left-grey.svg"), var(--header-normal-button-front-gradient);
+        background-size: 30%, auto;
+        background-repeat: no-repeat;
+        background-position: 50% 52%, center; }
+        .phone:nth-of-type(1) .content .header div:nth-of-type(1) button:active {
+          background: url("arrow-left-white.svg"), var(--header-pressed-button-front-gradient);
+          background-size: 30%, auto;
+          background-repeat: no-repeat;
+          background-position: 50% 52%, center; }
+      .phone:nth-of-type(1) .content .header div:nth-of-type(2) button {
+        background: url("menu-grey.svg"), var(--header-normal-button-front-gradient);
+        background-size: 30%, auto;
+        background-repeat: no-repeat;
+        background-position: 50% 52%, center; }
+        .phone:nth-of-type(1) .content .header div:nth-of-type(2) button:active {
+          background: url("menu-white.svg"), var(--header-pressed-button-front-gradient);
+          background-size: 30%, auto;
+          background-repeat: no-repeat;
+          background-position: 50% 52%, center; }
+      .phone:nth-of-type(1) .content .main {
+        grid-area: main;
+        display: flex; }
+        .phone:nth-of-type(1) .content .main article {
+          width: calc(var(--phone-width) / 1.27);
+          height: calc(var(--phone-width) / 1.27);
+          top: -1%; }
+          .phone:nth-of-type(1) .content .main article div {
+            width: 92.5%;
+            height: 92.5%; }
+      .phone:nth-of-type(1) .content .title {
+        grid-area: title;
+        position: relative; }
+        .phone:nth-of-type(1) .content .title h1 {
+          width: 100%;
+          position: relative;
+          color: rgba(255, 255, 255, 0.75);
+          font-size: var(--fluid-font-one); }
+        .phone:nth-of-type(1) .content .title h3 {
+          width: 100%;
+          position: absolute;
+          top: 30%;
+          left: 0;
+          color: var(--main-icon-text-color);
+          font-size: var(--fluid-font-three); }
+      .phone:nth-of-type(1) .content .slider {
+        grid-area: slider;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        position: relative; }
+        .phone:nth-of-type(1) .content .slider input[type="range"] {
+          appearance: none;
+          width: 90%;
+          height: 8%;
+          border-radius: 1vw;
+          background: black;
+          box-shadow: inset 0 -0.1vmin 0.1vmin var(--main-icon-text-color); }
+          .phone:nth-of-type(1) .content .slider input[type="range"]:focus {
+            outline: 0; }
+          .phone:nth-of-type(1) .content .slider input[type="range"]::-webkit-slider-thumb {
+            appearance: none;
+            width: calc(var(--phone-width) / 12.5);
+            height: calc(var(--phone-width) / 12.5);
+            position: relative;
+            border-radius: 50%;
+            background: radial-gradient(circle, orange 0, orange 30%, #24292d 30%, #24292d 50%, #212529 50%, #212529);
+            background-clip: border-box;
+            box-shadow: inset 0 0.2vmin 0.2vmin rgba(255, 255, 255, 0.15), inset 0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.08), inset -0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.01), inset 0 -0.2vmin 0.2vmin rgba(0, 0, 0, 0.5), 0.8vmin 0.8vmin 0.8vmin rgba(0, 0, 0, 0.4);
+            cursor: pointer; }
+          .phone:nth-of-type(1) .content .slider input[type="range"]::-moz-range-thumb {
+            width: calc(var(--phone-width) / 12.5);
+            height: calc(var(--phone-width) / 12.5);
+            position: relative;
+            border: none;
+            border-radius: 50%;
+            background: radial-gradient(circle, orange 0, orange 30%, #24292d 30%, #24292d 50%, #212529 50%, #212529);
+            background-clip: border-box;
+            box-shadow: inset 0 0.2vmin 0.2vmin rgba(255, 255, 255, 0.15), inset 0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.08), inset -0.2vmin 0 0.2vmin rgba(255, 255, 255, 0.01), inset 0 -0.2vmin 0.2vmin rgba(0, 0, 0, 0.5), 0.8vmin 0.8vmin 0.8vmin rgba(0, 0, 0, 0.4);
+            cursor: pointer; }
+        .phone:nth-of-type(1) .content .slider label {
+          width: 15%;
+          height: 20%;
+          position: absolute;
+          top: 2.5%;
+          color: var(--main-icon-text-color);
+          font-size: var(--fluid-font-two); }
+        .phone:nth-of-type(1) .content .slider #passed {
+          left: 3%; }
+        .phone:nth-of-type(1) .content .slider #left {
+          right: 3%; }
+      .phone:nth-of-type(1) .content .controls {
+        grid-area: controls;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; }
+  .phone:nth-of-type(2) {
+    transform: translate(-30%, 2.5%); }
+    .phone:nth-of-type(2) .content {
+      position: relative;
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-rows: 1fr 1fr 1fr 1fr repeat(6, 1fr);
+      grid-template-areas: "header header header header header header header header" "visual visual visual visual visual visual visual visual" "visual visual visual visual visual visual visual visual" "visual visual visual visual visual visual visual visual" "catalog catalog catalog catalog catalog catalog catalog catalog" "catalog catalog catalog catalog catalog catalog catalog catalog" "catalog catalog catalog catalog catalog catalog catalog catalog" "catalog catalog catalog catalog catalog catalog catalog catalog" "catalog catalog catalog catalog catalog catalog catalog catalog" "catalog catalog catalog catalog catalog catalog catalog catalog" "catalog catalog catalog catalog catalog catalog catalog catalog"; }
+      .phone:nth-of-type(2) .content .header {
+        grid-area: header; }
+      .phone:nth-of-type(2) .content .visual {
+        grid-area: visual;
+        width: 87.5%;
+        margin: auto;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center; }
+        .phone:nth-of-type(2) .content .visual div:nth-of-type(1) {
+          transform: translate(12%, -5%); }
+          .phone:nth-of-type(2) .content .visual div:nth-of-type(1) button {
+            background: url("heart-grey.svg"), var(--header-normal-button-front-gradient);
+            background-size: 30%, auto;
+            background-repeat: no-repeat;
+            background-position: 48% 52%, center; }
+            .phone:nth-of-type(2) .content .visual div:nth-of-type(1) button:active {
+              background: url("heart-white.svg"), var(--header-pressed-button-front-gradient);
+              background-size: 30%, auto;
+              background-repeat: no-repeat;
+              background-position: 48% 52%, center; }
+            .phone:nth-of-type(2) .content .visual div:nth-of-type(1) button.pressed {
+              background: url("heart-white.svg"), var(--header-pressed-button-front-gradient);
+              background-size: 30%, auto;
+              background-repeat: no-repeat;
+              background-position: 48% 52%, center; }
+            .phone:nth-of-type(2) .content .visual div:nth-of-type(1) button.heart-pressed {
+              background: url("heart-red.svg"), var(--header-normal-button-front-gradient);
+              background-size: 30%, auto;
+              background-repeat: no-repeat;
+              background-position: 48% 52%, center; }
+            .phone:nth-of-type(2) .content .visual div:nth-of-type(1) button.heart-back {
+              background: url("heart-white.svg"), var(--header-pressed-button-front-gradient);
+              background-size: 30%, auto;
+              background-repeat: no-repeat;
+              background-position: 48% 52%, center; }
+        .phone:nth-of-type(2) .content .visual div:nth-of-type(2) {
+          transform: translate(-12%, -5%); }
+          .phone:nth-of-type(2) .content .visual div:nth-of-type(2) button {
+            background: url("more-grey.svg"), var(--header-normal-button-front-gradient);
+            background-size: 30%, auto;
+            background-repeat: no-repeat;
+            background-position: 48% 52%, center;
+            background-position: 48% 50%, center; }
+            .phone:nth-of-type(2) .content .visual div:nth-of-type(2) button:active {
+              background: url("more-white.svg"), var(--header-pressed-button-front-gradient);
+              background-size: 30%, auto;
+              background-repeat: no-repeat;
+              background-position: 48% 52%, center;
+              background-position: 48% 50%, center; }
+        .phone:nth-of-type(2) .content .visual article {
+          width: calc(var(--phone-width) / 2.8);
+          height: calc(var(--phone-width) / 2.8);
+          transform: translateY(-5%); }
+          .phone:nth-of-type(2) .content .visual article div {
+            width: 90%;
+            height: 90%;
+            transform: none !important;
+            box-shadow: none; }
+      .phone:nth-of-type(2) .content .catalog {
+        grid-area: catalog;
+        display: flex;
+        position: relative;
+        overflow-y: scroll; }
+        .phone:nth-of-type(2) .content .catalog .catalog-content {
+          display: flex;
+          flex-wrap: wrap;
+          width: 95%;
+          height: auto;
+          margin: auto;
+          padding: 10% 0; }
+          .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper {
+            display: flex;
+            width: 100%;
+            height: calc(var(--phone-width) / 5.98);
+            border-radius: calc(var(--phone-width) / 22.4); }
+            .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper.pressed {
+              background: linear-gradient(180deg, #33393f 0%, #121417 100%); }
+            .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry {
+              display: grid;
+              grid-template-columns: repeat(6, 1fr);
+              grid-template-rows: repeat(2, 1fr);
+              width: 99%;
+              height: 95%;
+              margin: auto;
+              justify-items: start;
+              align-items: start;
+              grid-template-areas: "title title title title . control" "sub sub sub sub . control";
+              gap: 0;
+              border-radius: calc(var(--phone-width) / 22.4);
+              cursor: pointer; }
+              .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry.pressed {
+                background: linear-gradient(135deg, #131517 0%, #1b1d20 100%); }
+              .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry h1 {
+                grid-area: title;
+                margin-top: 6.5%;
+                margin-left: 10%;
+                color: rgba(255, 255, 255, 0.8);
+                font-size: var(--fluid-font-two);
+                pointer-events: none; }
+              .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry h3 {
+                grid-area: sub;
+                margin-top: -4%;
+                margin-left: 10%;
+                color: var(--main-icon-text-color);
+                font-size: var(--fluid-font-two);
+                text-align: left;
+                pointer-events: none; }
+              .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div {
+                grid-area: control;
+                width: calc(var(--phone-width) / 10.2);
+                height: calc(var(--phone-width) / 10.2);
+                transform: translate(20%, 37.5%); }
+                .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div button {
+                  background: url("play-smooth-grey.svg"), var(--header-normal-button-front-gradient);
+                  background-size: 30%, auto;
+                  background-repeat: no-repeat;
+                  background-position: 50% 52%, center;
+                  background-position: center, center; }
+                  .phone:nth-of-type(2) .content .catalog .catalog-content .entry-wrapper .entry div button.pressed {
+                    background: url("pause-smooth-white.svg"), var(--header-pressed-button-front-gradient);
+                    background-size: 30%, auto;
+                    background-repeat: no-repeat;
+                    background-position: 50% 52%, center;
+                    background-position: center, center; }
+      .phone:nth-of-type(2) .content:before, .phone:nth-of-type(2) .content:after {
+        content: "";
+        width: 99%;
+        height: 7.5%;
+        position: absolute;
+        left: 0.5%;
+        z-index: 99;
+        pointer-events: none; }
+      .phone:nth-of-type(2) .content:before {
+        top: 40%;
+        background: linear-gradient(to bottom, #272c30, #272c30 7.5%, transparent); }
+      .phone:nth-of-type(2) .content:after {
+        bottom: 0;
+        border-bottom-left-radius: 2vmin;
+        border-bottom-right-radius: 2vmin;
+        background: linear-gradient(to top, #1c1e22, #1c1e22 7.5%, transparent); }
