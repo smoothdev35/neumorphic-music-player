@@ -1,8 +1,8 @@
 # neumorphic-music-player
 
-  -Stand-alone version: https://neumorphic-music-player.netlify.app/
+  - Stand-alone version: https://neumorphic-music-player.netlify.app/
   
-  -Initial codepen version: https://codepen.io/smoothdev35/pen/WNvqjpL
+  - Initial codepen version: https://codepen.io/smoothdev35/pen/WNvqjpL
 
 I do not own any rights to the music used in this demo.
 
